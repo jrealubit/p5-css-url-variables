@@ -1,4 +1,5 @@
 let clr;
+let num;
 let img;
 
 function preload(){
@@ -13,10 +14,14 @@ function preload(){
 
 function setup() {
   let canvas = createCanvas(745, 509); //create canvas half screen width
-
   canvas.addClass('positioned'); //add positioned class to canvas (see style.css)
-  let params = getParams(); //get values from URL
+  let params = getParams();
   clr = params.color; 
+  num = params.num; 
+  //add color values in link to next page
+  var a = document.getElementsByTagName('a')[0];
+  var href = setParams(a.href, 'color', clr);
+  a.href = href;
   background('yellow');
   noStroke();
 }

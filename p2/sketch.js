@@ -12,13 +12,13 @@ function setup() {
   var href = setParams(a.href, 'color', clr);
   a.href = href;
 
-  background(clr);
-  fill('yellow');
+  background('#F28500');
+  fill(clr); //circles are now the color from the URL
   noStroke();
 }
 
 function draw() {
   for(var i = 0; i < num; i++){
-    ellipse(width/2, 50+i*30, 20);
+    ellipse(width/2, 50+i*30, num, num); //num from url controls width and height of ellipse
   }
 }
